@@ -18,8 +18,25 @@
       background-color: green;
       border-radius: 50%;
       margin: 10px;
+      display: inline-block;
     }
 
+    #small-circle {
+      width: 25px;
+      height: 25px;
+      background-color: purple;
+      border-radius: 50%;
+      margin: 25px;
+      display: inline-block;
+    }
+    #circle-animate {
+      background-color: crimson;
+      height: 50px;
+      width: 50px;
+      border-radius: 50%;
+      margin: 15px;
+      display: inline-block;
+    }
     h1 {
       color: blue;
     }
@@ -29,6 +46,7 @@
       height: 50px;
       background-color: orange;
       margin: 10px;
+      display: inline-block;
     }
 
     #par {
@@ -50,8 +68,9 @@
 
   <h1>jQuery</h1>
   <div id="circle"></div>
+  <div id="small-circle"></div>
   <div class="square"></div>
-  <div class="square"></div>
+ 
 
   <p id="para">text that will vanish</p>
   <button type="submit" id="btn">Vanish</button>
@@ -61,10 +80,16 @@
 
   <p class="parToggle" id="parToggle">Text that toggles in and out.</p>
   <button id="btnToggle">Toggle</button>
+<hr>
+
+
+<div id="circle-animate"></div>
 
 
 
   <script type="text/javascript">
+
+
   console.log("test")
  /*      $("#circle").click(function(){ 
         $("#circle").css("display", "none");
@@ -73,10 +98,12 @@
 
     })   */
 
-    $("div").click(function(){
+    $("#circle").click(function(){
         $(this).css("display", "none");
-  
+    })
 
+    $("#small-circle").click(function() {
+      $(this).css("background-color", "blue")
     })
 
 
@@ -91,6 +118,21 @@
 
     $("#btnToggle").click(function() {
       $("#parToggle").toggleClass("parToggle");
+    })
+
+
+
+    $("#circle-animate").click(function() {
+      $(this).animate({
+        
+          width:"200px",
+          height:"200px", 
+          backgroundColor:"orange",
+          marginLeft:"100px"
+        }, 1000, function(){
+      $(this).css("background-color", "orange")
+    })
+        
     })
   
   </script>
