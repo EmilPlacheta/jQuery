@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+
+  <style type="text/css">
+
+    #circle {
+      width: 100px;
+      height: 100px;
+      background-color: green;
+      border-radius: 50%;
+      margin: 10px;
+    }
+
+    h1 {
+      color: blue;
+    }
+
+    .square {
+      width: 50px;
+      height: 50px;
+      background-color: orange;
+      margin: 10px;
+    }
+
+    #par {
+      display: none;
+    }
+
+    #fadein {
+      display: block;
+    }
+
+    .parToggle {
+      display: none;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <h1>jQuery</h1>
+  <div id="circle"></div>
+  <div class="square"></div>
+  <div class="square"></div>
+
+  <p id="para">text that will vanish</p>
+  <button type="submit" id="btn">Vanish</button>
+
+  <p id="par">Text fades in</p>
+  <button id="fadein">Fade in</button>
+
+  <p class="parToggle" id="parToggle">Text that toggles in and out.</p>
+  <button id="btnToggle">Toggle</button>
+
+
+
+  <script type="text/javascript">
+  console.log("test")
+ /*      $("#circle").click(function(){ 
+        $("#circle").css("display", "none");
+        console.log($("#circle").css("background-color"));
+        console.log($("body").css("width"));
+
+    })   */
+
+    $("div").click(function(){
+        $(this).css("display", "none");
+  
+
+    })
+
+
+    $("#btn").click(function(){
+      $("#para").fadeOut();
+    })
+
+    $("#fadein").click(function() {
+      $("#par").fadeIn();
+    })
+
+
+    $("#btnToggle").click(function() {
+      $("#parToggle").toggleClass("parToggle");
+    })
+  
+  </script>
+
+
+
+
+  
+
+</body>
+</html>
